@@ -25,13 +25,12 @@ FEATURES:
 - Dynamic vehicle respawn at sectors based on the sector owner's side
 - Automatically flip any overturned vehicle back upright
 
-- Persistent score and rank
+- Persistent score and rank ( to do )
 - Available loadouts are based on rank
 - Each rank will be a feat in itself and will not be easily obtained
-- Play now an come back later to resume your progress
 
 - Respawn menu
-- Menu Spectator Mode
+- Menu Spectator Mode ( implimented bare - on the table still )
 - Includes available loadouts and available spawn points
 - Dynamic spawn points
 - Available spawn points based on sectors controlled
