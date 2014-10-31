@@ -5,6 +5,7 @@ class BCM
         file = "BCM\BCM\functions";
         class sector               {};
 		class vehRespawn           {};
+		class vehFlip         	   {};
 		class respawn              {};
 		class campOwner            {};
 		class rankRewards          {};

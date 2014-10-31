@@ -5,12 +5,23 @@ if ( isDedicated ) exitWith {};
 
 	waitUntil { ! ( isNull player ) && ( time > 0 ) };
 	
+    player addAction [
+        "Flip Vehicle", 
+        {_nul=call BCM_fnc_vehFlip;},
+        [], 
+        0, 
+        false, 
+        true, 
+        "", 
+        "_this == (vehicle _target) && {(count nearestObjects [_target, ['landVehicle'], 5]) > 0 && {(vectorUp cursorTarget) select 2 < 0}}"
+    ];
+	
 	{
 		player removeAllEventHandlers _x;
 	} forEach [ "respawn", "take" ];
 
 	player addEventhandler [ "respawn", "_this spawn BCM_fnc_respawn" ];
-	player addEventHandler [ "take", "_this call BCM_fnc_campOwner" ];
+	player addEventHandler [ "take", "_this call BCM_fnc_campOwner"];
 	//setDate [2035, 7, 6, (paramsArray select 0), 0];
 	
 	_kits = [player, true] call BIS_fnc_getRespawnInventories;
