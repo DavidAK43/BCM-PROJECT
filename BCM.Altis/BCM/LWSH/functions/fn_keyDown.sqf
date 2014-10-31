@@ -30,7 +30,4 @@ if ( count _keys > 0 ) then {
 	
 };
 
-if ( true ) exitWith {};
-
-
-
+nil

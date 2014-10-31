@@ -4,4 +4,4 @@
 	
 } foreach [ [ IDC_VRH_PROGRESS_UNIFORM, loadUniform player ], [ IDC_VRH_PROGRESS_VEST, loadVest player ], [ IDC_VRH_PROGRESS_BACKPACK, loadBackPack player ] ];
 
-if ( true ) exitWith {};
+nil

@@ -4,4 +4,4 @@
 	(findDisplay 46) displayAddEventHandler ["KeyDown","(_this select 1) call LWSH_fnc_keyDown; false"];  
 };
 
-	if ( true ) exitWith {};
+nil

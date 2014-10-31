@@ -38,4 +38,4 @@ player addEventHandler ["Respawn", {
 	];  
 }];  
 
-if ( true ) exitWith {};
+nil

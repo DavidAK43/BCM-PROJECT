@@ -10,15 +10,4 @@ _nul=call VRH_fnc_pBar;
 	
 } forEach [ [ uniform player, IDC_VRH_BUTTON_UNIFORM ], [ vest player, IDC_VRH_BUTTON_VEST ], [ backPack player, IDC_VRH_BUTTON_BACKPACK ] ];
 
-if ( true ) exitWith {};
-
-
-
-
-
-
-
-
-
-
-
+nil

@@ -16,4 +16,4 @@ call compile format ["
 
 call VRH_fnc_pBar;
 
-if ( true ) exitWith {};
+nil

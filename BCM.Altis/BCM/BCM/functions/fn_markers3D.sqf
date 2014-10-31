@@ -105,4 +105,4 @@ BCMAMMOBOXARRAY = allMissionObjects "Land_Pallet_MilBoxes_F";
 	
 };
 
-if ( true ) exitWith {};
+nil

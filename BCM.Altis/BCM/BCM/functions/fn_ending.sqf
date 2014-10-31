@@ -39,4 +39,4 @@ if ( !( isServer ) ) exitWith {};
 
 };
 
-if ( true ) exitWith {};
+nil

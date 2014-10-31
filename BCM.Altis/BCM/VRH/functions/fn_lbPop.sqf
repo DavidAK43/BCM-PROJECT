@@ -58,4 +58,4 @@ _magArray = [];
 	
 lbSetCurSel [ _listBox, 0 ];
 
-if ( true ) exitWith {};
+nil
