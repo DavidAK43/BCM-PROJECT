@@ -1,3 +1,14 @@
+/*
+	file: fn_markers3D.sqf
+	author(s): Iceman77
+	
+	description:
+	- Adds oneachFrame stacked EH that renders 3D markers on players, corpses, ammo dumps, and the mobile respawn camp pack 
+	
+	usage:
+	postInit	
+*/
+
 if ( isDedicated ) exitWith {};
 waitUntil { ! ( isNull player ) && ( player == player ) };
 

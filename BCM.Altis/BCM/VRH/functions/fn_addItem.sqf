@@ -1,3 +1,14 @@
+/*
+	file: fn_lbPop.sqf
+	author(s): Iceman77
+	
+	description:
+	- On button click, if the player has room in the given container, then add the item and notify the player, else JUST notify the player
+	
+	usage (button click):
+	action = "[ IDC_VRH_LISTBOX_MAIN, 'Uniform' ] call VRH_fnc_addItem;";
+*/
+
 private [ "_listBox", "_container", "_index", "_className" ];
 
 _listBox = [ _this, 0, 0, [0] ] call BIS_fnc_param;

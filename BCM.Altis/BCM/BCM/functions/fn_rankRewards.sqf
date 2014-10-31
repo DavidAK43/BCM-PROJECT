@@ -1,3 +1,15 @@
+/*
+	file: fn_rankRewards.sqf
+	author(s): Iceman77
+	
+	description:
+	- Called after the player's rank is set (in fn_clientInit.sqf loop)  
+	- checks against the player's rankID and grants appropriate laodouts
+	
+	usage:
+	_nul=call BCM_fnc_rankRewards;	
+*/
+
 switch ( rankID player ) do {
 	case 1:{
 		switch ( BCMSIDEPLAYER ) do {

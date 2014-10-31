@@ -1,3 +1,14 @@
+/*
+	file: fn_serverInit.sqf
+	author(s): Iceman77
+	
+	description:
+	- set the date, add eventhandlers to ai units
+	
+	usage:
+	postInit
+*/
+
 if ( !( isServer ) ) exitWith {};
 
 setDate [2035, 7, 6, (paramsArray select 0), 0];

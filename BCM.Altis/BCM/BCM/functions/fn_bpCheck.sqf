@@ -1,8 +1,21 @@
+/*
+	file: fn_bpCheck.sqf
+	author(s): Iceman77
+	
+	description:
+	- Monitor for a null camp pack or tent on the ground and in all units current backpacks
+	- If no camp oir camp pack exists, then rerun the script that randomly creates the backpack
+	
+	usage:
+	postInit
+*/
+
 if ( !( isServer ) ) exitWith {};
 
 [] spawn { 
-	private ["_WHGRND","_WHSIMS","_delay"];
 
+	private ["_WHGRND","_WHSIMS"];
+	
 	while { true } do {
 
 		missionNameSpace setVariable ["BCMCAMPACTIVE", false];
@@ -35,6 +48,8 @@ if ( !( isServer ) ) exitWith {};
 		
 		sleep 60;
 	};
+	
+	
 };
 
 nil

@@ -1,3 +1,14 @@
+/*
+	file: fn_keyDown.sqf
+	author(s): Iceman77
+	
+	description:
+	- Checks for custom user action keys assigned in useraction 17. Else use default key (caps-lock) to toggle the status HUD	 
+	
+	usage:
+	(findDisplay 46) displayAddEventHandler ["KeyDown","(_this select 1) call LWSH_fnc_keyDown; false"];	
+*/
+
 #define LWSHdisplay (uiNamespace getVariable "LWSH_Display") 
 
 private [ "_keys" ];

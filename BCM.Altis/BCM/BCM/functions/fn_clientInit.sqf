@@ -1,3 +1,15 @@
+/*
+	file: fn_clientInit.sqf
+	author(s): Iceman77
+	
+	description:
+	- add actions and eventhandlers to clients. Remove all initial respawn templates (for re-joining players so there's no duplicate templates)
+	and add new ones. Monitor the player's score to dictate ranks and available loadouts.
+	
+	usage:
+	postInit
+*/
+
 if ( isDedicated ) exitWith {};
 
 [] spawn {
@@ -15,6 +27,17 @@ if ( isDedicated ) exitWith {};
         "", 
         "_this == (vehicle _target) && {(count nearestObjects [_target, ['landVehicle'], 5]) > 0 && {(vectorUp cursorTarget) select 2 < 0}}"
     ];
+	
+	player addAction [
+		"<t color='#0099FF'>VIRTUAL REARMING HUB</t>", 
+		{ _nul=call VRH_fnc_uiInit; },
+		[],
+		6,
+		true,
+		true,
+		"",
+		"{ cursorTarget isKindOf _x } count [ 'ReammoBox_F','Land_Pallet_MilBoxes_F' ] > 0 && { _target distance cursorTarget <= 5 }"
+	];  
 	
 	{
 		player removeAllEventHandlers _x;

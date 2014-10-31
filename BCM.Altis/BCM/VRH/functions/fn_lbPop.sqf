@@ -1,3 +1,14 @@
+/*
+	file: fn_lbPop.sqf
+	author(s): Iceman77
+	
+	description:
+	- draw useful ammunition from the config and populate the list box with the items.
+	
+	usage:
+	_nul=[ IDC_VRH_LISTBOX_MAIN ] call VRH_fnc_lbPop;	
+*/
+
 private [ "_listBox", "_specialArray", "_muzzle", "_magArray", "_displayName", "_picture", "_index", "_loops" ];
 
 _listBox = [ _this, 0, -1, [-1] ] call BIS_fnc_param;

@@ -1,3 +1,14 @@
+/*
+	file: fn_pBar.sqf
+	author(s): Iceman77
+	
+	description:
+	- Set the progress bars accordingly with the player's container's loads
+	
+	usage:
+	_nul=call VRH_fnc_pBar;	
+*/
+
 {
 
 	(   ( findDisplay IDD_VRH_DISPLAY ) displayCtrl ( _x select 0 )   ) progressSetPosition ( _x select 1 );

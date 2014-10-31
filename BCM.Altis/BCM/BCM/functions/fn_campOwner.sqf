@@ -1,3 +1,16 @@
+/*
+	file: fn_campOwner.sqf
+	author(s): Iceman77
+	
+	description:
+	- Triggered via the take EH (added in fn_clientInit.sqf)  
+	- If the item taken is a camp spawn pack, and if the side of the unit that grabbed the pack isn't already in control of the respawn camp pack, 
+	then a new side has taken control of the pack so notify all clients that this change has been made.
+	
+	usage:
+	player addEventHandler [ "take", "_this call BCM_fnc_campOwner"];
+*/
+
 private [ "_unit", "_container", "_item", "_sideCaller", "_side", "_message" ];
 
 _unit = _this select 0;

@@ -1,3 +1,15 @@
+/*
+	file: fn_ending.sqf
+	author(s): Iceman77
+	
+	description:
+	- Monitor all sides tickets. Whenever one reaches 0, put them into losers array.
+	After loser's array's count is 2, then exit the loop. Filter the winner, and broadcast messages
+	
+	usage:
+	postInit	
+*/
+
 if ( !( isServer ) ) exitWith {};
 	
 [] spawn {

@@ -1,4 +1,15 @@
-[] spawn { // TO WORK WITH POSTINIT
+/*
+	file: fn_monitor.sqf
+	author(s): Iceman77
+	
+	description:
+	- Monitors player's health and fatigue. Setting the progress bar controls and colors accordingly 
+	
+	usage:
+	[] spawn LWSH_fnc_monitor;	
+*/
+
+[] spawn { 
 
 	( "LWSH_Layer" call BIS_fnc_rscLayer ) cutRsc [ "LWSH_HUD","PLAIN" ];
 

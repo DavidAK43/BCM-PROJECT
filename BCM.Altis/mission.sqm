@@ -557,7 +557,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={3827.6963,14.623211,14679.709};
+					position[]={3822.5444,13.684065,14685.638};
 					azimut=-313.46185;
 					special="NONE";
 					id=9;
@@ -2613,7 +2613,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=34;
+		items=36;
 		class Item0
 		{
 			position[]={3802.9946,14.439075,14656.22};
@@ -2627,7 +2627,7 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={3832.6152,14.703311,14679.687};
+			position[]={3828.575,14.090515,14686.132};
 			azimut=48.731461;
 			id=95;
 			side="EMPTY";
@@ -2964,11 +2964,29 @@ class Mission
 		};
 		class Item33
 		{
-			position[]={3806.249,14.455117,14643.777};
+			position[]={3807.3748,14.445271,14642.817};
 			special="NONE";
 			id=127;
 			side="EMPTY";
 			vehicle="Flag_NATO_F";
+			skill=0.60000002;
+		};
+		class Item34
+		{
+			position[]={5205.5093,22.805763,14864.835};
+			special="NONE";
+			id=128;
+			side="EMPTY";
+			vehicle="Flag_AAF_F";
+			skill=0.60000002;
+		};
+		class Item35
+		{
+			position[]={5270.3608,71.560562,16147.665};
+			special="NONE";
+			id=129;
+			side="EMPTY";
+			vehicle="Flag_CSAT_F";
 			skill=0.60000002;
 		};
 	};

@@ -1,3 +1,14 @@
+/*
+	file: fn_uiInit.sqf
+	author(s): Iceman77
+	
+	description:
+	- create the ui and call functions that populate the ListBox, disable buttons, and set progress bars 
+	
+	usage:
+	addAction
+*/
+
 createDialog "VRH_Dialog";
 
 waitUntil { !( isNull ( findDisplay IDD_VRH_DISPLAY ) ) };

@@ -5,6 +5,6 @@ class LWSH
         file = "BCM\LWSH\functions";
 		class keyDown                {}; 
 		class monitor                {}; 
-		class displayInit            {};
+		class displayInit            {postInit=1;};
     };
 };  
