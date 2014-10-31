@@ -43,7 +43,7 @@ if ( isDedicated ) exitWith {};
 		player removeAllEventHandlers _x;
 	} forEach [ "respawn", "take" ];
 
-	player addEventhandler [ "respawn", "_this spawn BCM_fnc_respawn" ];
+	player addEventhandler [ "respawn", "_this call BCM_fnc_respawn" ];
 	player addEventHandler [ "take", "_this call BCM_fnc_campOwner"];
 	//setDate [2035, 7, 6, (paramsArray select 0), 0];
 	
