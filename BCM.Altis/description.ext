@@ -1,0 +1,50 @@
+respawn = 3;
+respawnDelay = 8;
+respawnVehicleDelay = 60;
+respawnDialog = 0;
+respawnTemplates[] = {"Tickets","MenuInventory","MenuPosition","MenuSpectator"};
+respawnonStart=1;
+enableDebugConsole = 1;
+disabledAI = 0;
+author="Iceman77";
+OnLoadName = "BCM";
+OnLoadMission = "www.BCMArmaverse.com";
+loadScreen = "BCM\BCM\images\battlefield.jpg";
+saving=0;
+
+class Header
+{
+gameType = SC; 
+minPlayers = 1;
+maxPlayers = 51; 
+};
+
+#include "BCM\BCM\resources\loadouts.hpp"  
+#include "BCM\BCM\resources\ending.hpp"  
+#include "BCM\BCM\resources\parameters.hpp"  
+#include "BCM\BCM\resources\globalDefines.hpp"
+#include "BCM\VRH\resources\dialog.hpp"
+
+class CfgFunctions 
+{
+#include "BCM\BCM\functions\functions.hpp"
+#include "BCM\VRH\functions\functions.hpp"
+#include "BCM\LWSH\functions\functions.hpp"
+};
+
+class RscTitles 
+{
+#include "BCM\LWSH\resources\display.hpp"  
+};
+
+class CfgNotifications 
+{
+#include "BCM\BCM\resources\notifications.hpp"
+};
+
+
+
+
+
+
+
