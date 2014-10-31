@@ -41,10 +41,3 @@ class CfgNotifications
 {
 #include "BCM\BCM\resources\notifications.hpp"
 };
-
-
-
-
-
-
-
