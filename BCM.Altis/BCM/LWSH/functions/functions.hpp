@@ -4,7 +4,7 @@ class LWSH
 	{
         file = "BCM\LWSH\functions";
 		class keyDown                {}; 
-		class monitor                {}; 
+		class monitor                {postInit=1;}; 
 		class displayInit            {postInit=1;};
     };
 };  

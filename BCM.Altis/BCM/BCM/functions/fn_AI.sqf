@@ -23,55 +23,57 @@
 		
 		{ 
 			_grp = _x;
-			_waypoints = waypoints _grp;
-			{ 
-				deleteWaypoint [ _grp, _foreachIndex ];
-			} forEach _waypoints;
 			
-			_module = ( _modules select floor random count _modules );
-			_atkPos = getPos _module;
-			_vehicles = nearestObjects [ ( leader _grp ), [ "landVehicle", "Air" ], 100 ]; 
-			
-			if ( count _vehicles > 0 && { vehicle ( leader _grp ) == ( leader _grp ) } ) then { 
-				private [ "_veh", "_vehPos" ];
+			if (!(isPlayer (leader _grp))) then {
+				_waypoints = waypoints _grp;
+				{ 
+					deleteWaypoint [ _grp, _foreachIndex ];
+				} forEach _waypoints;
 				
-				_veh = ( _vehicles select 0 );
-				_vehPos = getPos _veh;
+				_module = ( _modules select floor random count _modules );
+				_atkPos = getPos _module;
+				_vehicles = nearestObjects [ ( leader _grp ), [ "landVehicle", "Air" ], 100 ]; 
 				
-				if ( count ( crew _veh ) == 0 && { ( canMove _veh ) } ) then {
-					private ["_wp1","_wp2"];
+				if ( count _vehicles > 0 && { vehicle ( leader _grp ) == ( leader _grp ) } ) then { 
+					private [ "_veh", "_vehPos" ];
 					
-					_wp1 = _grp  addWaypoint [ _vehPos, 0 ];
-					_wp1 setWaypointType "GETIN NEAREST";
-					_wp1 setWaypointBehaviour "AWARE"; 
-					_wp1 setWaypointSpeed "FULL";
-					_wp1 setWaypointCombatMode "RED";
+					_veh = ( _vehicles select 0 );
+					_vehPos = getPos _veh;
 					
-					_wp2 = _grp addWaypoint [ _atkPos, 1];
-					_wp2 setWaypointType "MOVE";
-					_wp2 setWaypointBehaviour "AWARE"; 
-					_wp2 setWaypointSpeed "FULL";
-					_wp2 setWaypointCombatMode "RED";					
-				} else {		
+					if ( count ( crew _veh ) == 0 && { ( canMove _veh ) } ) then {
+						private ["_wp1","_wp2"];
+						
+						_wp1 = _grp  addWaypoint [ _vehPos, 0 ];
+						_wp1 setWaypointType "GETIN NEAREST";
+						_wp1 setWaypointBehaviour "AWARE"; 
+						_wp1 setWaypointSpeed "FULL";
+						_wp1 setWaypointCombatMode "RED";
+						
+						_wp2 = _grp addWaypoint [ _atkPos, 1];
+						_wp2 setWaypointType "MOVE";
+						_wp2 setWaypointBehaviour "AWARE"; 
+						_wp2 setWaypointSpeed "FULL";
+						_wp2 setWaypointCombatMode "RED";					
+					} else {		
+						private ["_wp1"];
+
+						_wp1 = _grp addWaypoint [ _atkPos, 0];
+						_wp1 setWaypointType "MOVE";
+						_wp1 setWaypointBehaviour "AWARE"; 
+						_wp1 setWaypointSpeed "FULL";
+						_wp1 setWaypointCombatMode "RED";					
+					};				
+				} else {
 					private ["_wp1"];
 
 					_wp1 = _grp addWaypoint [ _atkPos, 0];
 					_wp1 setWaypointType "MOVE";
 					_wp1 setWaypointBehaviour "AWARE"; 
 					_wp1 setWaypointSpeed "FULL";
-					_wp1 setWaypointCombatMode "RED";					
-				};				
-			} else {
-				private ["_wp1"];
-
-				_wp1 = _grp addWaypoint [ _atkPos, 0];
-				_wp1 setWaypointType "MOVE";
-				_wp1 setWaypointBehaviour "AWARE"; 
-				_wp1 setWaypointSpeed "FULL";
-				_wp1 setWaypointCombatMode "RED";				
-			}; 
-			
-			
+					_wp1 setWaypointCombatMode "RED";				
+				}; 
+				
+			};
 			
 		} forEach allGroups; 
 		
