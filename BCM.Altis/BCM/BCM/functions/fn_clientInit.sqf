@@ -68,11 +68,6 @@ if ( isDedicated ) exitWith {};
 		_x setMarkercolor ( getMarkercolor _x );
 	} foreach allMapMarkers;
 	
-	/*
-	_score = profileNameSpace getVariable ["BCMPLAYERSCORE", 0];
-	player addScore _score;
-	*/
-	
 	private ["_s"];
 	
 	_s = 0;
@@ -81,23 +76,11 @@ if ( isDedicated ) exitWith {};
 	
 		_s = _s + 10;
 		
-		/*
-		if ( isNil "BCMSETITEMSINIT" ) then {
-			waitUntil {(!(isNull findDisplay 58))};
-				BCMSETITEMSINIT = 0;
-		};
-		*/
-		
 		waitUntil { score player >= _s };
 			_rank = getText ( configfile >> "CfgRanks" >> str _i >> "displayName" );
 			_picture = getText ( configfile >> "CfgRanks" >> str _i >> "texture" );
 			player setRank _rank;
 			_nul=call BCM_fnc_rankRewards;	
-			
-			/*
-			profileNameSpace setVariable ["BCMPLAYERSCORE", score player];
-			saveProfileNameSpace;
-			*/
 			
 		if ( isNull ( findDisplay 58 ) ) then {
 			[ 

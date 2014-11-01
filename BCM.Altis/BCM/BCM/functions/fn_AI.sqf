@@ -13,7 +13,7 @@
 
 	waitUntil { time > 0 };
 	
-	private ["_modules","_grp","_waypoints","_vehicles","_atkPos"];
+	private ["_modules","_waypoints","_vehicles","_atkPos"];
  
 	_modules = allMissionObjects "ModuleSector_F";	
 	
@@ -22,9 +22,9 @@
 		sleep 5;
 		
 		{ 
+			private ["_grp"];
 			_grp = _x;
 			
-			if (!(isPlayer (leader _grp))) then {
 				_waypoints = waypoints _grp;
 				{ 
 					deleteWaypoint [ _grp, _foreachIndex ];
@@ -34,13 +34,13 @@
 				_atkPos = getPos _module;
 				_vehicles = nearestObjects [ ( leader _grp ), [ "landVehicle", "Air" ], 100 ]; 
 				
-				if ( count _vehicles > 0 && { vehicle ( leader _grp ) == ( leader _grp ) } ) then { 
+				if ( count _vehicles > 0 ) then { 
 					private [ "_veh", "_vehPos" ];
 					
 					_veh = ( _vehicles select 0 );
 					_vehPos = getPos _veh;
 					
-					if ( count ( crew _veh ) == 0 && { ( canMove _veh ) } ) then {
+					if ((canMove _veh) && {(speed _veh < 1)}) then {
 						private ["_wp1","_wp2"];
 						
 						_wp1 = _grp  addWaypoint [ _vehPos, 0 ];
@@ -72,8 +72,6 @@
 					_wp1 setWaypointSpeed "FULL";
 					_wp1 setWaypointCombatMode "RED";				
 				}; 
-				
-			};
 			
 		} forEach allGroups; 
 		

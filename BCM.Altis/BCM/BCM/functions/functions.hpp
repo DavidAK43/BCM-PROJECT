@@ -9,14 +9,15 @@ class BCM
 		class respawn              {};
 		class campOwner            {};
 		class rankRewards          {};
+		class bpSpawn              {};
 		class preInitVars          {preInit=1;};
 		class ending               {postInit=1;};
+		class uavPackSpawn         {postInit=1;};
 		class AI          		   {postInit=1;};
 		class bpCheck              {postInit=1;};
 		class clientInit           {postInit = 1;};
 		class serverInit           {postInit = 1;};
 		class markers3D            {postInit = 1;};
-		class bpSpawn              {postInit = 1;};
 		class debug          	   {postInit = 1;};
 	};
 };  
