@@ -6,10 +6,11 @@ DESCRIPTION:
 =======================
 - Battlefield Conquest Mode aka BCM is a game mode derived from BF conquest game mode. I always wanted to bring the same style to the Arma engine. With more vehicles, realistic ballistics, bigger atmosphere, limitless scenarios, side objectives, grouping system, sling loading, fast roping And much much more.
 
-- So Far here is what I have accomplished. Given it's untested in dedicated environment, but we'll get there.
 =======================
 FEATURES:
 =======================
+So Far here is what I have accomplished. Given it's untested in dedicated environment, but we'll get there.
+
 - suitable for 1 - 51 participants
 
 - 3 sided struggle between NATO,CSAT & AAF
