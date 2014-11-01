@@ -1,3 +1,4 @@
+if (!(isServer)) exitWith {};
 {
 	private ["_uavPack","_packPos","_weaponHolder"];
 	_uavPack = _x select 0;
