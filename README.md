@@ -48,8 +48,9 @@ FEATURES:
 - Rearming Hubs marked with 3D marker
 
 - Fast Rearming
-- Custom UI for rearming the player with valid ammunition out in the field (VRH)
--
+
+- Custom UI for rearming the player with valid ammunition out in the field 
+
 - Automatically flip any overturned vehicle back upright
 
 - lobby parameters
