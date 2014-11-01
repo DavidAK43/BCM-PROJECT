@@ -25,7 +25,6 @@ FEATURES:
 - 3D markers 
 - Custom UI for rearming the player with valid ammunition out in the field 
 - Automatically flip any overturned vehicle back upright
-- Chaos
 
 - lobby parameters:
 - Time of day
