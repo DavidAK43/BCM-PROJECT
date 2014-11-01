@@ -1,14 +1,11 @@
 ======================
 BCM
 =====================
-======================
  Battlefield conquest mode for Arma3 - PvPvE - 3 sided scenario containing ( NATO, CSAT, AAF )
-======================
 ======================
 DESCRIPTION:
 ======================
 - Battlefield Conquest Mode aka BCM is a game mode derived from BF conquest game mode. I always wanted to bring the same style to the Arma engine. With more vehicles, realistic ballistics, bigger atmosphere, limitless scenarios, side objectives, grouping system, sling loading, fast roping And much much more.
-
 =======================
 FEATURES:
 =======================
@@ -61,8 +58,9 @@ FEATURES:
 - Fatigue ( OFF / ON )
 - Starting Tickets
 - Mission Timer 
-
-// ---------- TO DO ----------- //
+=============================
+TO DO:
+=============================
 - Grouping menu where players can form their own groups via custom grouping UI
 - Testing testing testing
 - Fast Roping and sling loading
