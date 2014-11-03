@@ -20,6 +20,7 @@ FEATURES:
 - Dynamic vehicle respawn at sectors based on the sector owner's side
 - Mobile Respawn Camp to fight over. The camp pack can spawn in any given building's rooms in any given sector
 - UAV terminal to fight over. The little terminal can spawn in any given building's rooms in any given sector and UAV bags are "plentiful" at base but on a refresh timer. One bag can be taken every 60 seconds, but Keep in mind there's only one terminal on the map...
+- Vehicle side restrictions
 - Toggleable Custom Status HUD that shows current health and stamina via progress bars
 - 3D markers 
 - Custom UI for rearming the player with valid ammunition out in the field 
@@ -31,6 +32,7 @@ FEATURES:
 - 3D Marker's range
 - Fatigue ( OFF / ON )
 - Starting Tickets
+- Vehicle side restrictions ( OFF / ON )
 - Mission Timer 
 
 - TO DO:
