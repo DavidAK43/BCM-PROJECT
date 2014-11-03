@@ -8,7 +8,7 @@ enableDebugConsole = 1;
 disabledAI = 0;
 author="Iceman77";
 OnLoadName = "BCM";
-OnLoadMission = "www.BCMArmaverse.com";
+OnLoadMission = "github.com/DavidAK43/BCM-PROJECT";
 loadScreen = "BCM\BCM\images\battlefield.jpg";
 saving=0;
 
@@ -41,3 +41,9 @@ class CfgNotifications
 {
 #include "BCM\BCM\resources\notifications.hpp"
 };
+
+class CfgHints
+{
+#include "BCM\BCM\resources\hints.hpp"
+};
+

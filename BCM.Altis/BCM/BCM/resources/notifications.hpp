@@ -15,7 +15,7 @@ class BCM_TICKETS_AWARDED_MSG
 	title = "Tickets Awarded";
 	description = "Your side has been awarded tickets!";
 	iconText = "+%1";
-	priority = 1;
+	priority = 7;
 	sound = "scoreAdded";
 	difficulty[] = {"netStats"};
 };
@@ -28,7 +28,7 @@ class BCM_GENERIC_PROFILECOLOR_MSG
 	description = "%2";
 	iconPicture = "%3";
 	iconText = "%4";
-	duration = 5;
+	duration = 7;
 };
 class BCM_GENERIC_GREEN_MSG 
 {

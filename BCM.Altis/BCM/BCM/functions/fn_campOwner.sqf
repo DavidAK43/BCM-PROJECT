@@ -20,6 +20,8 @@ _sideCaller = side _unit;
 
 if ( _item in [ "B_Respawn_TentDome_F", "B_Respawn_TentA_F" ] ) then {
 
+	[["Tactics","RespawnCamps"], 60, nil, 60, nil, true, nil, true, true] call BIS_fnc_advHint;
+	
 	private ["_side"];
 	
 	_side = player getVariable ["BCMCAMPOWNER", sideUnknown];
@@ -43,12 +45,27 @@ if ( _item in [ "B_Respawn_TentDome_F", "B_Respawn_TentA_F" ] ) then {
 			] call BIS_fnc_MP;
 		
 		} forEach [ WEST, EAST, INDEPENDENT ];
+		
+		[ _sideCaller, 50 ] call BIS_fnc_respawnTickets;	
+			
+		[ 
+			[ 
+				"BCM_TICKETS_AWARDED_MSG" , 
+				[ "50" ] 
+			], 
+			"BIS_fnc_showNotification", 
+			_sideCaller
+		] call BIS_fnc_MP;
+		
+		
 	};
 	
 } else {
 
 	if ( _item in ["B_UavTerminal","O_UavTerminal","I_UavTerminal"] ) then {
 	
+		[["UAV","Terminal"], 60, nil, 60, nil, true, nil, true, true] call BIS_fnc_advHint;
+		
 		_newItem = switch _sideCaller do {
 			case west:{"B_UavTerminal";};
 			case east:{"O_UavTerminal";};
@@ -61,7 +78,7 @@ if ( _item in [ "B_Respawn_TentDome_F", "B_Respawn_TentA_F" ] ) then {
 		_side = player getVariable ["BCMTERMINALOWNER", sideUnknown];
 		
 		if ( _side != _sideCaller ) then {
-			player setVariable ["BCMTERMINALOWNER", _sideCaller, true]; 			
+			player setVariable ["BCMTERMINALOWNER", _sideCaller, true];
 			{
 				_message = if ( _x != _sideCaller ) then {"BCM_GENERIC_RED_MSG";} else {"BCM_GENERIC_GREEN_MSG";};
 				[
@@ -78,6 +95,17 @@ if ( _item in [ "B_Respawn_TentDome_F", "B_Respawn_TentA_F" ] ) then {
 					_x 
 				] call BIS_fnc_MP;
 			} forEach [ WEST, EAST, INDEPENDENT ];
+			
+			[ _sideCaller, 50 ] call BIS_fnc_respawnTickets;	
+			
+			[ 
+				[ 
+					"BCM_TICKETS_AWARDED_MSG" , 
+					[ "50" ] 
+				], 
+				"BIS_fnc_showNotification", 
+				_sideCaller
+			] call BIS_fnc_MP;
 			
 		};
 		

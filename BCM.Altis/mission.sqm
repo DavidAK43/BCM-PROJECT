@@ -377,7 +377,7 @@ class Mission
 						};
 						class Item13
 						{
-							value="0";
+							value="-1";
 							parentCls="ModuleSector_F";
 							typeName="CostAir";
 						};

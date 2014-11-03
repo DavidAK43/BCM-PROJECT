@@ -68,6 +68,12 @@ if ( isDedicated ) exitWith {};
 		_x setMarkercolor ( getMarkercolor _x );
 	} foreach allMapMarkers;
 	
+	[] spawn {
+		waitUntil {!(isNull (findDisplay 58))};
+		waitUntil {isNull (findDisplay 58)};
+		[["BCM","FeedBack"], 60, nil, 60, nil, true, nil, true, true] call BIS_fnc_advHint;
+	};
+
 	private ["_s"];
 	
 	_s = 0;

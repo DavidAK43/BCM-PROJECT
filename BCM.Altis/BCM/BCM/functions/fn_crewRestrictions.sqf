@@ -25,4 +25,17 @@ if ( _sideVehicle != _sideUnit ) exitWith {
 	nil
 };
 
+if (isNil "BCMDRIVINGMSG" && {(_vehicle isKindOf "Car")}) then {
+	[["Vehicle","Driving"], 60, nil, 60, nil, true, nil, true, true] call BIS_fnc_advHint;
+	BCMDRIVINGMSG = 1;
+};
+if (isNil "BCMCOUNTERMEASURESMSG" && {(_vehicle isKindOf "Car")}) then {
+	[["Vehicle","Countermeasures"], 60, nil, 60, nil, true, nil, true, true] call BIS_fnc_advHint;
+	BCMCOUNTERMEASURESMSG = 1;
+};
+if (isNil "BCMARMORMSG" && {(_vehicle isKindOf "Car")}) then {
+	[["Guide","armor"], 60, nil, 60, nil, true, nil, true, true] call BIS_fnc_advHint;
+	BCMARMORMSG = 1;
+};
+
 nil
