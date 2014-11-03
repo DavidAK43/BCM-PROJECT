@@ -10,6 +10,7 @@ class BCM
 		class campOwner            {};
 		class rankRewards          {};
 		class bpSpawn              {};
+		class crewRestrictions     {};
 		class preInitVars          {preInit=1;};
 		class ending               {postInit=1;};
 		class uavPackSpawn         {postInit=1;};

@@ -110,21 +110,21 @@ BCMAMMOBOXARRAY = allMissionObjects "Land_Pallet_MilBoxes_F";
 			};
 		} forEach [BCMNATOTABLE,BCMCSATTABLE,BCMINDEPTABLE];
 		
-		if ( ( getBackPackCargo ( nearestObjects [ player, [ "WeaponHolderSimulated", "groundWeaponHolder" ], 8 ] select 0 ) select 0 ) select 0 in [ "B_Respawn_TentDome_F", "B_Respawn_TentA_F" ] ) then {
+		if (!(isNull player) && { ( getBackPackCargo ( nearestObjects [ player, [ "WeaponHolderSimulated", "groundWeaponHolder" ], 8 ] select 0 ) select 0 ) select 0 in [ "B_Respawn_TentDome_F", "B_Respawn_TentA_F" ] } ) then {
 			private [ "_visPos" ];
 			_visPos = getPosATL ( nearestObjects [ player, [ "WeaponHolderSimulated","groundWeaponHolder" ], 8 ] select 0 );
 			_visPos set [ 2, ( getPosATL ( nearestObjects [ player, [ "WeaponHolderSimulated", "groundWeaponHolder" ], 8 ] select 0 ) select 2 ) + 1 ];
 			drawIcon3D [ "\a3\ui_f\data\gui\cfg\hints\ActionMenu_ca.paa", [ 0,1,0, 0.75 ], _visPos, 0.5, 0.5, 45, "Mobile Respawn Camp", 0, 0.025 ];
 		};
 		
-		if ( ( getitemCargo ( nearestObjects [ player, [ "WeaponHolderSimulated", "groundWeaponHolder" ], 8 ] select 0 ) select 0 ) select 0 in [ "B_UavTerminal","O_UavTerminal","I_UavTerminal" ] ) then {
+		if (!(isNull player) && { ( getitemCargo ( nearestObjects [ player, [ "WeaponHolderSimulated", "groundWeaponHolder" ], 8 ] select 0 ) select 0 ) select 0 in [ "B_UavTerminal","O_UavTerminal","I_UavTerminal" ] } ) then {
 			private [ "_visPos" ];
 			_visPos = getPosATL ( nearestObjects [ player, [ "WeaponHolderSimulated","groundWeaponHolder" ], 8 ] select 0 );
 			_visPos set [ 2, ( getPosATL ( nearestObjects [ player, [ "WeaponHolderSimulated", "groundWeaponHolder" ], 8 ] select 0 ) select 2 ) + 1 ];
 			drawIcon3D [ "\a3\ui_f\data\gui\cfg\hints\UAVBasic_ca.paa", [ 0,1,0, 0.75 ], _visPos, 0.5, 0.5, 45, "UAV Terminal", 0, 0.025 ];
 		};
 		
-		if (count (nearestObjects [ player, [ "Item_B_UavTerminal","Item_O_UavTerminal","Item_I_UavTerminal"  ], 8 ]) > 0) then {
+		if (!(isNull player) && { count (nearestObjects [ player, [ "Item_B_UavTerminal","Item_O_UavTerminal","Item_I_UavTerminal"  ], 8 ]) > 0 } ) then {
 			private [ "_visPos" ];
 			_visPos = getPosATL (nearestObjects [ player, [ "Item_B_UavTerminal","Item_O_UavTerminal","Item_I_UavTerminal"  ], 8 ] select 0);
 			//_visPos set [ 2, getPosATL (nearestObjects [ player, [ "Item_B_UavTerminal","Item_O_UavTerminal","Item_I_UavTerminal" ], 8 ] select 0) select 2 + 1 ];

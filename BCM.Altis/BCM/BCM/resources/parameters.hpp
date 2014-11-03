@@ -52,4 +52,12 @@ class Params
 		texts[] = {"OFF","ON"};
 	};
 	
+	class Vehicle_Side_Restrictions 
+	{// select 6
+		title = "Vehicle Side Restrictions:";
+		values[] = {0,1};
+		default = 0; 
+		texts[] = {"OFF","ON"};
+	};
+	
 };

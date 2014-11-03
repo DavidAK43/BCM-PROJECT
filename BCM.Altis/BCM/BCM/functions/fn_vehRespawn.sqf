@@ -28,7 +28,7 @@
 
 if ( ! ( isServer ) ) exitWith {};
 
-private ["_veh","_abandonDelay","_destroyedDelay","_sector","_vehArray","_defaultVehicle","_bluforVehicle","_opforVehicle","_independentVehicle","_vehDir","_vehPos","_vehType","_abandoned","_dead"];
+private ["_veh","_abandonDelay","_destroyedDelay","_sector","_vehArray","_defaultVehicle","_bluforVehicle","_opforVehicle","_independentVehicle","_vehDir","_vehPos","_vehType","_abandoned","_dead","_markerText","_displayName","_picture"];
 
 _veh 			= [ _this, 0, objNull, [ objNull ] ] call BIS_fnc_param; 
 _abandonDelay 	= [ _this, 1, 60, [ 0 ] ] call BIS_fnc_param; 
@@ -55,7 +55,7 @@ while { true } Do {
 			sleep 1;  		
 		};
 			
-		if ( _abandoned ) then {
+		if ( _abandoned && {(_veh distance _vehPos > 10)}) then {
 			deleteVehicle _veh;
 			
 			_vehType = switch ( _sector getVariable "owner" ) do {
@@ -67,8 +67,31 @@ while { true } Do {
 			
 			sleep 1;
 			_veh = createVehicle [ _vehtype, _vehPos, [], 0, "CAN_COLLIDE" ];
+			_veh addEventHandler ["getIn","_null=call BCM_fnc_crewRestrictions"];
 			_veh setDir _vehDir;
-			_veh setPos [ ( _vehPos select 0 ), (_vehPos select 1 ), 0 ];			
+			_veh setPos [ ( _vehPos select 0 ), (_vehPos select 1 ), 0 ];
+			_displayName = getText (configFile >> "CfgVehicles" >> _vehType >> "displayName");
+			_picture = getText (configFile >> "CfgVehicles" >> _vehType >> "picture");
+			
+			{
+				if ((markerPos _x) distance _sector < 25 && (markerType _x == "EMPTY")) then {
+					_markerText = markerText _x; 
+				};
+			} forEach allMapMarkers;
+			
+			[
+				[
+					"BCM_GENERIC_DEFAULT_MSG",
+					[
+						"Vehicle Respawn", 
+						format ["A %1 has spawned at the %2", _displayName, _markertext],
+						_picture,
+						""
+					]
+				],
+				"BIS_fnc_showNotification", 
+				_sector getVariable "owner" 
+			] call BIS_fnc_MP;
 		};
 	};
 
@@ -91,12 +114,33 @@ while { true } Do {
 			
 			sleep 1;
 			_veh = createVehicle [ _vehtype, _vehPos, [], 0, "CAN_COLLIDE" ];
+			_veh addEventHandler ["getIn","_null=call BCM_fnc_crewRestrictions"];
 			_veh setDir _vehDir;
-			_veh setPos [ ( _vehPos select 0 ), (_vehPos select 1 ), 0 ];			
-		};
-		
-	};
-	
+			_veh setPos [ ( _vehPos select 0 ), (_vehPos select 1 ), 0 ];
+			_displayName = getText (configFile >> "CfgVehicles" >> _vehType >> "displayName");
+			_picture = getText (configFile >> "CfgVehicles" >> _vehType >> "picture");
+			
+			{
+				if ((markerPos _x) distance _sector < 25 && (markerType _x == "EMPTY")) then {
+					_markerText = markerText _x;
+				};
+			} forEach allMapMarkers;
+			
+			[
+				[
+					"BCM_GENERIC_DEFAULT_MSG",
+					[
+						"Vehicle Respawn", 
+						format ["A %1 has spawned at the %2", _displayName, _markertext],
+						_picture,
+						""
+					]
+				],
+				"BIS_fnc_showNotification", 
+				_sector getVariable "owner" 
+			] call BIS_fnc_MP;
+		};		
+	};	
 };
 
 nil
