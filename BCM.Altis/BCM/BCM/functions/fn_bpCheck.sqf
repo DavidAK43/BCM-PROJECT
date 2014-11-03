@@ -75,7 +75,14 @@ if ( !( isServer ) ) exitWith {};
 				"BIS_fnc_showNotification" 
 			] call BIS_fnc_MP;	
 			
-			objNull setVariable ["BCMTERMINALOWNER", sideUnknown, true];
+			private ["_placeHolder"];
+			{
+				if (true) exitWith {
+					_placeHolder = _x;
+				};
+			} forEach allUnits;
+			_placeHolder setVariable ["BCMTERMINALOWNER", sideUnknown, true];
+			
 		};
 		
 		if ( !( missionNameSpace getVariable "BCMTERMINALACTIVE" ) ) then {
@@ -93,7 +100,13 @@ if ( !( isServer ) ) exitWith {};
 				"BIS_fnc_showNotification" 
 			] call BIS_fnc_MP;	
 			
-			objNull setVariable ["BCMTERMINALOWNER", sideUnknown, true];
+			private ["_placeHolder"];
+			{
+				if (true) exitWith {
+					_placeHolder = _x;
+				};
+			} forEach allUnits;
+			_placeHolder setVariable ["BCMTERMINALOWNER", sideUnknown, true];
 		};		
 		
 		sleep 300;
