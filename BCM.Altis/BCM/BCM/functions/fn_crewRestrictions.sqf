@@ -16,7 +16,7 @@ if ( _sideVehicle != _sideUnit ) exitWith {
 	[
 		"BCM_GENERIC_RED_MSG",
 		[
-			"Vehicle Respawn", 
+			"Side Restrictions", 
 			format ["You can't use %1 vehicles !!!", [_sideVehicle] call BIS_fnc_sideName] ,
 			"\A3\ui_f\data\map\markers\military\warning_CA.paa",
 			""
