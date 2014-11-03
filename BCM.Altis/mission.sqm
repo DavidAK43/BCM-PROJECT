@@ -2932,7 +2932,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=46;
+		items=45;
 		class Item0
 		{
 			position[]={3802.9946,14.439075,14656.22};
@@ -3424,16 +3424,6 @@ class Mission
 			vehicle="Land_Pallet_MilBoxes_F";
 			skill=0.60000002;
 			init="this allowDamage false;";
-		};
-		class Item45
-		{
-			position[]={3800.0796,14.366754,14638.78};
-			azimut=47.082775;
-			id=148;
-			side="EMPTY";
-			vehicle="I_MRAP_03_hmg_F";
-			skill=0.60000002;
-			init="this addEventHandler [""getIn"",""_null=call BCM_fnc_crewRestrictions""];";
 		};
 	};
 	class Markers
