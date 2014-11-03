@@ -81,7 +81,7 @@ if ( !( isServer ) ) exitWith {};
 					_placeHolder = _x;
 				};
 			} forEach allUnits;
-			_placeHolder setVariable ["BCMTERMINALOWNER", sideUnknown, true];
+			_placeHolder setVariable ["BCMCAMPOWNER", sideUnknown, true];
 			
 		};
 		
